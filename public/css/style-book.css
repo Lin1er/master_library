@@ -1,0 +1,66 @@
+@media screen and (max-width: 600px) {
+    .img-book {
+        align-self: center;
+        max-width: 150px;
+    }
+    .con-thumb {
+        display: flex; 
+        flex-direction: row; 
+        flex-wrap: wrap; 
+        justify-content: center; 
+        margin-right: 10px; 
+        margin-left: 10px; 
+    }
+    .thumb-book a {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .thumb-book div {
+        position: absolute;
+        top: 90%;
+        left: 0;
+        right: 0;
+        transform: translateY(-80%);
+        margin: 0;
+        padding: 5px; /* Ubah padding menjadi 5px */
+        background-color: rgba(255, 255, 255, 0.516);
+        color: #000;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+
+}
+
+@media screen and (min-width: 1025px) {
+    .bookDetail {
+    border: 1px solid #dee2e6!important;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    padding: 10px;
+    }   
+
+    .sidebar {
+    border: 1px solid #dee2e6!important;
+    margin-left: 10px;
+    text-align: center;
+    padding: 10px;
+    }
+
+    .ulasan {
+    border: 1px solid #dee2e6!important;
+    padding: 10px;
+    }
+
+    .listbuku {
+    border: 1px solid #dee2e6!important;
+    padding: 10px;
+    }
+}
