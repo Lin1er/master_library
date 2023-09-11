@@ -16,6 +16,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\UlasanController;
 use App\Http\Controllers\SukaController;
+use App\Http\Controllers\ApiController;
 
 /*
 |--------------------------------------------------------------------------

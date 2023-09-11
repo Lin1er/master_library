@@ -1,6 +1,6 @@
 <!-- resources/views/openlibrary/search.blade.php -->
 
-@extends('layouts.app')
+@extends('layouts.main')
 
 @section('content')
     <h1>Daftar Buku</h1>

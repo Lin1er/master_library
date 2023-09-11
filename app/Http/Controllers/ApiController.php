@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use GuzzleHttp\Client;
+
 
 class ApiController extends Controller
 {
@@ -26,8 +28,9 @@ class ApiController extends Controller
 
         // Mendapatkan data respons dalam bentuk JSON
         $data = json_decode($response->getBody()->getContents());
+        $title = 'Open Library';
 
         // Tampilkan data dalam tampilan (view)
-        return view('openlibrary.search', compact('data'));
+        return view('pages.openlibrary.search', compact('data', 'title'));
     }
 }
