@@ -32,7 +32,7 @@
                         Tersedia
                     @endif
                 </p>
-                @if ($book->pdf_url === null || $book->pdf_url === '')
+                @if ($book->pdf_url === null || $book->pdf_url === 'Null')
                 @else
                 @include('partials.download-pdf')
                 @endif
@@ -73,10 +73,11 @@
                     <div style="">
                         <p class="text-muted">Anda sudah mengantri untuk buku ini.</p>
                         @auth
-                        <form class="" action="{{ route('queues.destroy', Auth()->user()->id) }}" method="post">
+                        <form class="" action="/queues" method="post">
                             @csrf
                             @method('DELETE')
-                            <!-- Isi formulir yang lain -->
+                            <input type="hidden" name="book_id" value="{{ $book->id }}">
+                            <input type="hidden" name="user_id" value="{{ Auth::id() }}">
                             <button type="submit" class="btn btn-danger">Batal Mengantri</button>
                         </form>                    
                         @endauth

@@ -77,11 +77,14 @@ class QueueController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy($user_id)
+    public function destroy(Request $request)
     {
-        $queue = Queue::where('user_id', $user_id)
-                      ->first();
-    
+        $book_id = $request->input('book_id');
+        $user_id = $request->input('user_id');
+        
+        // Cari dan hapus suka berdasarkan ulasan_id dan user_id
+        $queue = Queue::where('book_id', $book_id)->where('user_id', $user_id)->first();
+
         if ($queue) {
             $queue->delete();
             return redirect()->back()->with('success', 'Antrian telah berhasil dibatalkan.');

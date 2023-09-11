@@ -9,6 +9,11 @@ class Suka extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'ulasan_id',
+        'user_id'
+    ];
+
     public function ulasan(): BelongsTo
     {
         return $this->belongsTo(Ulasan::class);

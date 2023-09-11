@@ -11,6 +11,12 @@ class Ulasan extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'book_id',
+        'user_id',
+        'ulasan',
+    ];
+
     public function sukas()
     {
         return $this->hasMany(Suka::class);

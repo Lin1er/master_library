@@ -15,6 +15,7 @@ use App\Http\Controllers\QueueController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\UlasanController;
+use App\Http\Controllers\SukaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,8 +40,13 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/logout', [LoginController::class, 'logout']);
     Route::get('/profile/edit', [UserController::class, 'edit'])->name('profile.edit');
     Route::put('/profile/update', [UserController::class, 'update'])->name('profile.update');
-
-
+    Route::post('/ulasan', [UlasanController::class, 'store'])->name('ulasan.store');
+    Route::post('/suka', [SukaController::class, 'store'])->name('suka.store');
+    Route::delete('/unsuka', [SukaController::class, 'destroy'])->name('suka.destroy');
+    Route::resources([
+        '/queues' => QueueController::class,
+    ]);
+    Route::delete('/queues', [QueueController::class, 'destroy'])->name('queues.destroy');
 });
 
 Route::get('/', [PagesController::class, 'landing'])->name('landing');
@@ -61,11 +67,7 @@ Route::get('/promosi', [PagesController::class, 'Promosi'])->name('Promosi');
 Route::get('/tata-tertib', [PagesController::class, 'TataTertib'])->name('TataTertib');
 Route::get('/berita', [PagesController::class, 'Berita'])->name('Berita');
 
-Route::resources([
-    '/queues' => QueueController::class,
-]);
 
-Route::post('/ulasan', [UlasanController::class, 'store'])->name('ulasan.store');
 
 Route::middleware(['admin'])->group(function () {
     Route::resources([
