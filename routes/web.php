@@ -28,6 +28,8 @@ use App\Http\Controllers\SukaController;
 |
 */
 
+Route::get('/openlibrary/search', [ApiController::class, 'search']);
+
 Route::middleware(['guest'])->group(function () {
     Route::get('/login', [LoginController::class, 'index'])->name('login');
     Route::post('/login', [LoginController::class, 'authenticate']);

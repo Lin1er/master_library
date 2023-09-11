@@ -42,9 +42,9 @@
           <li class="nav-item {{ Request::is('/') ? 'active' : '' }}">
             <a class="nav-link" href="/">Home</a>
           </li>
-          <li class="nav-item {{ Request::is('/berita') ? 'active' : '' }}">
+          {{-- <li class="nav-item {{ Request::is('/berita') ? 'active' : '' }}">
             <a class="nav-link" href="/berita">Berita</a>
-          </li>
+          </li> --}}
           <li class="nav-item {{ Request::is('home') ? 'active' : '' }}">
             <a class="nav-link" href="/home">Katalog Perpustakaan</a>
           </li>
@@ -53,10 +53,10 @@
             <ul class="dropdown-menu" aria-labelledby="profileDropdown">
               <li><a class="dropdown-item" href="/profile-perpustakaan">Profile Perpustakaan</a></li>
               <li><a class="dropdown-item" href="/visimisi">Visi & Misi</a></li>
-              <li><a class="dropdown-item" href="/prestasi">Prestasi</a></li>
-              <li><a class="dropdown-item" href="/layanan">Layanan</a></li>
-              <li><a class="dropdown-item" href="/fasilitas">Fasilitas</a></li>
-              <li><a class="dropdown-item" href="/promosi">Promosi</a></li>
+              {{-- <li><a class="dropdown-item" href="/prestasi">Prestasi</a></li> --}}
+              {{-- <li><a class="dropdown-item" href="/layanan">Layanan</a></li> --}}
+              {{-- <li><a class="dropdown-item" href="/fasilitas">Fasilitas</a></li> --}}
+              {{-- <li><a class="dropdown-item" href="/promosi">Promosi</a></li> --}}
               <li><a class="dropdown-item" href="/tata-tertib">Tata Tertib</a></li>
             </ul>
           </li>

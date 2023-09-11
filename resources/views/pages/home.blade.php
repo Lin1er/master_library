@@ -236,7 +236,7 @@
                     <a href="/books/{{ $book->id }}?={{ $book->slug }}" style="text-decoration: none; color: black;">
                         <h3>{{ $book->title }}</h3>
                     </a>
-                    @if ($book->pdf_url !== null && $book->pdf_url !== 'Null')
+                    @if ($book->pdf_url !== null && $book->pdf_url !== 'Null' && $book->pdf_url !== '')
                     <span class="d-inline-block" tabindex="0" data-bs-toggle="popover" data-bs-placement="top" data-bs-content="PDF book is available">
                         <img style="width: 20px; height: 20px;" src="{{ asset('icon-svg/ebook.svg') }}" alt="">
                         <small>EBook 

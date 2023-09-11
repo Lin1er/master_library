@@ -32,7 +32,7 @@
                         Tersedia
                     @endif
                 </p>
-                @if ($book->pdf_url === null || $book->pdf_url === 'Null')
+                @if ($book->pdf_url === null || $book->pdf_url === 'Null' || $book->pdf_url === '')
                 @else
                 @include('partials.download-pdf')
                 @endif
