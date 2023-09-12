@@ -30,6 +30,8 @@ use App\Http\Controllers\ApiController;
 */
 
 Route::get('/openlibrary/search', [ApiController::class, 'search']);
+Route::get('/search', [ApiController::class, 'search']);
+
 
 Route::middleware(['guest'])->group(function () {
     Route::get('/login', [LoginController::class, 'index'])->name('login');

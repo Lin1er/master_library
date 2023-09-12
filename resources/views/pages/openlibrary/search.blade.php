@@ -2,7 +2,7 @@
 
 @extends('layouts.main')
 
-@section('content')
+@section('container')
     <h1>Daftar Buku</h1>
 
     <form action="/search" method="GET">
@@ -22,7 +22,7 @@
                         @endif
                         <strong>Judul:</strong> {{ $book->title }}
                         <br>
-                        <strong>Penulis:</strong> {{ implode(', ', $book->author_name) }}
+                        {{-- <strong>Penulis:</strong> {{ $book->author_name }} --}}
                         <br>
                     </li>
                 @endforeach
