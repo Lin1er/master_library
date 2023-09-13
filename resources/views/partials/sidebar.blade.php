@@ -1,4 +1,4 @@
-<div class="col-lg-2 col-md-3 col-sm-4 offset-lg-1">
+<div class="col-lg-2 col-md-3 col-sm-4 offset-lg-1 col-sm-1">
     <div class="sidebar">
         <nav id="sidebar">
             <div class="p-4 pt-5">
@@ -20,7 +20,7 @@
                             </li>
                             @endforeach
                         </ul>
-                        
+
                     </li>
                 </ul>
             </div>

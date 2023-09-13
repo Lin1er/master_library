@@ -221,35 +221,35 @@
     @endif
     </div> --}}
     @if (isset($data->docs))
-    <div class="col-lg-5">
+    <div class="col-lg-5 offset-lg-3">
         @foreach ($data->docs as $book)
         <div class="card p-3 my-2">
             <div class="row" style="display: flex; flex-direction: row; align-items: center; gap: 15px;">
                 <div class="col-lg-2">
-                    @if (file_exists(public_path('https://covers.openlibrary.org/b/id/' . $book->cover_i)))
-                    <img src="{{ asset('https://covers.openlibrary.org/b/id/' . $book->cover_i) }}" class="img-thumbnail rounded-top" alt="{{ $book->title }}">
+                    @if (isset($book->cover_i))
+                        <img src="https://covers.openlibrary.org/b/id/{{ $book->cover_i }}-M.jpg" class="img-thumbnail rounded-top" alt="{{ $book->title }}">
                     @else
-                    <img src="{{ asset('img-thumb/default.png') }}" class="img-thumbnail rounded-top" alt="{{ $book->title }}">
+                        <img src="{{ asset('img-thumb/default.png') }}" class="img-thumbnail rounded-top" alt="{{ $book->title }}">
                     @endif
                 </div>
                 <div class="col-lg-8" style="display: flex; flex-direction: column; justify-content: center;">
-                    {{-- <a href="/books/{{ $book->id }}?={{ $book->slug }}" style="text-decoration: none; color: black;"> --}}
+                    <a href="https://openlibrary.org{{ $book->key }}" style="text-decoration: none; color: black;">
                         <h3>{{ $book->title }}</h3>
-                    {{-- </a> --}}
+                    </a>
+                    <p>Author: @if (isset($book->author_name[0])) {{ $book->author_name[0] }} @else Unknown @endif</p>
                     {{-- @if ($book->pdf_url !== null && $book->pdf_url !== 'Null' && $book->pdf_url !== '') --}}
                     <span class="d-inline-block" tabindex="0" data-bs-toggle="popover" data-bs-placement="top" data-bs-content="PDF book is available">
                         <img style="width: 20px; height: 20px;" src="{{ asset('icon-svg/ebook.svg') }}" alt="">
-                        <small>EBook 
+                        <small>EBook
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16">
                             <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/>
                             </svg>
                         </small>
                     </span>
+                    <p>@if (isset($book->first_sentence[0])) {{ $book->first_sentence[0] }} @endif</p>
                     {{-- @endif --}}
-                    <p>Author: {{ $book->author_name }}</p>
                     {{-- <small>Category: {{ $book->category->name }}</small> --}}
                     {{-- <p style="text-align: start;">Status: {{ $book->borrow ? 'Dipinjam' : 'Tersedia' }}</p> --}}
-                    <p>{{ Illuminate\Support\Str::limit($book->first_sentence, 150) }}</p>
                 </div>
                 {{-- <div style="display: flex; justify-content: center; align-items: center; flex-direction: column;" class="col-lg-2 border rounded"></div> --}}
             </div>

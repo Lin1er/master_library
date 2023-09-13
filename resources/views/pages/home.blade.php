@@ -58,8 +58,8 @@
         margin-left: 5px;
     }
 
-</style>
-<style>
+    </style>
+    <style>
     @media screen and (max-width: 600px) {
         .thumb-book {}
 
@@ -213,12 +213,10 @@
     </form>
 </div>
 <div class="row">
-    <div class="offset-lg-2 col-lg-2">
+    <div class="offset-lg-2 col-lg-2 d-none d-lg-block">
         @if (isset($categories))
-        <div class="offset-lg-2 col-lg-2">
             @include('partials.sidebar')
-        </div>
-    @endif
+        @endif
     </div>
     @if ($books->count())
     <div class="col-lg-5">
@@ -239,7 +237,7 @@
                     @if ($book->pdf_url !== null && $book->pdf_url !== 'Null' && $book->pdf_url !== '')
                     <span class="d-inline-block" tabindex="0" data-bs-toggle="popover" data-bs-placement="top" data-bs-content="PDF book is available">
                         <img style="width: 20px; height: 20px;" src="{{ asset('icon-svg/ebook.svg') }}" alt="">
-                        <small>EBook 
+                        <small>EBook
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16">
                             <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/>
                             </svg>

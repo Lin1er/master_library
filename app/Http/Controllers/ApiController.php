@@ -27,6 +27,7 @@ class ApiController extends Controller
             $title = 'Open Library';
 
             // Tampilkan data dalam tampilan (view)
+            // @dd($data);
             return view('pages.openlibrary.home', compact('data', 'title'));
         } catch (\GuzzleHttp\Exception\RequestException $e) {
             // Mengelola kesalahan jika permintaan gagal

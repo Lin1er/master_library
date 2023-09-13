@@ -1,32 +1,32 @@
   <style>
-    /* Add custom CSS here to style the header and make it visually appealing */
+        /* Add custom CSS here to style the header and make it visually appealing */
 
-/* Example: */
-.navbar {
-  padding: 10px 0;
-}
+    /* Example: */
+    .navbar {
+    padding: 10px 0;
+    }
 
-.navbar-brand {
-  font-size: 24px;
-}
+    .navbar-brand {
+    font-size: 24px;
+    }
 
-.nav-link {
-  font-size: 16px;
-}
+    .nav-link {
+    font-size: 16px;
+    }
 
-.dropdown-menu {
-  background-color: #f8f9fa;
-}
+    .dropdown-menu {
+    background-color: #f8f9fa;
+    }
 
-.dropdown-item {
-  font-size: 14px;
-}
+    .dropdown-item {
+    font-size: 14px;
+    }
 
-.dropdown-divider {
-  border-color: #d6d6d6;
-}
+    .dropdown-divider {
+    border-color: #d6d6d6;
+    }
 
-/* Adjust as needed to match your desired design */
+    /* Adjust as needed to match your desired design */
 
   </style>
 
@@ -71,13 +71,17 @@
           <li class="nav-item {{ Request::is('kliping') ? 'active' : '' }}">
             <a class="nav-link" href="/kliping">Kliping</a>
           </li>
+          <li class="nav-item {{ Request::is('openlibrary/search') ? 'active' : '' }}">
+            <a class="nav-link" href="/openlibrary/search">Cari E-Book</a>
+          </li>
+
           @auth
           @if (auth()->user()->role == 1)
           <li class="nav-item {{ Request::is('admins/dashboard') ? 'active' : '' }}">
             <a class="nav-link" href="/admins/dashboard">Admin</a>
         </li>
           @endif
-          @endauth      
+          @endauth
         </ul>
 
         <div class="navbar-nav ms-auto">

@@ -84,7 +84,7 @@
       }
     </style>
 
-    
+
     <!-- Custom styles for this template -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css" rel="stylesheet">
     <!-- Custom styles for this template -->
@@ -142,7 +142,7 @@
       </ul>
     </div>
 
-    
+
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
   <symbol id="calendar3" viewBox="0 0 16 16">
     <path d="M14 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857V3.857z"/>
@@ -250,7 +250,7 @@
 <html lang="en">
 
 <head>
-  <title>Title</title>
+  <title>Admin Dashboard</title>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
