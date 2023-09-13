@@ -68,9 +68,9 @@
               <li><a class="dropdown-item" href="/karya/karyatulisterpublikasi">Karya Karya Tulis Terpublik</a></li>
             </ul>
           </li>
-          <li class="nav-item {{ Request::is('kliping') ? 'active' : '' }}">
+          {{-- <li class="nav-item {{ Request::is('kliping') ? 'active' : '' }}">
             <a class="nav-link" href="/kliping">Kliping</a>
-          </li>
+          </li> --}}
           <li class="nav-item {{ Request::is('openlibrary/search') ? 'active' : '' }}">
             <a class="nav-link" href="/openlibrary/search">Cari E-Book</a>
           </li>

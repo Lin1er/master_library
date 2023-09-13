@@ -208,7 +208,7 @@
 <div class="container main-search my-3">
     <form class="d-flex" role="search" action="/search" method="GET">
         @csrf
-        <input class="form-control me-2" type="search" placeholder="Search..." aria-label="Search" name="query">
+        <input class="form-control me-2" type="search" placeholder="Search..." aria-label="Search" name="query" value="{{ $data->q }}">
         <button class="btn btn-outline-success" type="submit">Search</button>
     </form>
 </div>

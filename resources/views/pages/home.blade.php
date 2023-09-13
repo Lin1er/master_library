@@ -213,7 +213,7 @@
     </form>
 </div>
 <div class="row">
-    <div class="offset-lg-2 col-lg-2 d-none d-lg-block">
+<div class="offset-lg-2 col-lg-2 d-none d-lg-block">
         @if (isset($categories))
             @include('partials.sidebar')
         @endif

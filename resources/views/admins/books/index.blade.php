@@ -4,18 +4,18 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
 <div class="container main-search my-3">
-  <form class="d-flex" role="search" action="/admins/books">
-      @csrf
-      <input class="form-control me-2" type="search" placeholder="Search..." aria-label="Search" name="search">
-      <button class="btn btn-outline-success" type="submit">Search</button>
-  </form>
+    <form class="d-flex" role="search" action="/admins/books">
+        @csrf
+        <input class="form-control me-2" type="search" placeholder="Search..." aria-label="Search" name="search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+</div>
+<div class="col-lg-8 offset-lg-2">
+    <h2>List Books</h2>
+    <a name="" id="" class="btn btn-primary" href="/admins/books/create" role="button">Add Books</a>
 </div>
 
-<h2>List Books</h2>
-
-<a name="" id="" class="btn btn-primary" href="/admins/books/create" role="button">Add Books</a>
-
-<div class="table-responsive small">
+<div class="table-responsive small col-lg-8 offset-lg-2">
   <table class="table table-striped table-sm">
     <thead>
       <tr>
@@ -49,13 +49,13 @@
           </td>
           <td style="display:flex;">
             <a href="{{ route('books.edit', $book->id) }}" class="btn btn-primary">Edit</a>
-            
+
             <!-- Button Borrow -->
             <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#borrowModal{{ $book->id }}">Borrow</button>
-            
+
             <!-- Button Queue -->
             <button class="btn btn-info" data-bs-toggle="modal" data-bs-target="#queueModal{{ $book->id }}">Queue</button>
-            
+
             @if ($book->borrow)
               <form class="" action="{{ route('borrows.destroy', $book->borrow->id) }}" method="post">
                 @csrf
@@ -90,35 +90,40 @@
             </form>
           </td>
         </tr>
-        
-        <!-- Modal Borrow -->
-        <div class="modal fade" id="borrowModal{{ $book->id }}" tabindex="-1" aria-labelledby="borrowModalLabel{{ $book->id }}" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="borrowModalLabel{{ $book->id }}">Borrow Book - {{ $book->title }}</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                <!-- Isi form peminjaman -->
-                <form action="{{ route('borrows.store') }}" method="post">
-                  @csrf
-                  <input type="hidden" name="book_id" value="{{ $book->id }}">
-                  <div class="mb-3">
-                    <label for="user_id" class="form-label">Borrower Id</label>
-                    <input type="text" class="form-control" id="user_id" name="user_id" required>
-                  </div>
-                  <input type="hidden" name="tgl_pinjam" value="{{ now() }}">
-                  <div class="mb-3">
-                    <label for="return_date" class="form-label">Return Date</label>
-                    <input type="date" class="form-control" id="return_date" name="tgl_kembali" required>
-                  </div>
-                  <button type="submit" class="btn btn-primary">Submit</button>
-                </form>
-              </div>
-            </div>
-          </div>
+
+ <!-- Modal Borrow -->
+<div class="modal fade" id="borrowModal{{ $book->id }}" tabindex="-1" aria-labelledby="borrowModalLabel{{ $book->id }}" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="borrowModalLabel{{ $book->id }}">Borrow Book - {{ $book->title }}</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
+        <div class="modal-body">
+          <!-- Isi form peminjaman -->
+          <form action="{{ route('borrows.store') }}" method="post">
+            @csrf
+            <input type="hidden" name="book_id" value="{{ $book->id }}">
+            <div class="mb-3">
+              <label for="user_id" class="form-label">Borrower</label>
+              <input type="text" class="form-control" id="user_id" name="user_id" list="userList" required>
+              <datalist id="userList">
+                @foreach ($users as $user)
+                  <option value="{{ $user->id }}">{{ $user->name }}</option>
+                @endforeach
+              </datalist>
+            </div>
+            <input type="hidden" name="tgl_pinjam" value="{{ now() }}">
+            <div class="mb-3">
+              <label for="return_date" class="form-label">Return Date</label>
+              <input type="date" class="form-control" id="return_date" name="tgl_kembali" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 
         <!-- Modal Queue -->
         <div class="modal fade" id="queueModal{{ $book->id }}" tabindex="-1" aria-labelledby="queueModalLabel{{ $book->id }}" aria-hidden="true">
@@ -153,7 +158,7 @@
             </div>
           </div>
         </div>
-        
+
       @endforeach
     </tbody>
   </table>
