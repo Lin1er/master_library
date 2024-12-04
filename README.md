@@ -58,7 +58,7 @@ Aplikasi ini dibangun dengan teknologi berikut:
 
 6. Jalankan migrasi untuk membuat tabel-tabel database:
     ```bash
-    php artisan migrate
+    php artisan migrate --seed
     ```
 
 7. Install dependensi frontend menggunakan npm:
