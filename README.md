@@ -86,7 +86,3 @@ Aplikasi akan berjalan di `http://localhost:8000`.
 ## Kontribusi
 
 Jika Anda ingin berkontribusi pada proyek ini, silakan fork repository ini, buat cabang baru (`git checkout -b fitur-baru`), lakukan perubahan yang diinginkan, kemudian kirim pull request.
-
-## Lisensi
-
-Proyek ini dilisensikan di bawah [MIT License](LICENSE).
